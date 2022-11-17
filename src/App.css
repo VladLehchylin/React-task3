@@ -4,3 +4,12 @@
   padding: 2rem;
   text-align: center;
 }
+
+.course-card {
+  border: 1px solid green;
+  margin-bottom: 10px;
+}
+
+.complited {
+  background-color: gray;
+}
