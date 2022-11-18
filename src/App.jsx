@@ -1,38 +1,22 @@
-import { useEffect } from "react";
-import { useState } from "react";
 import "./App.css";
+import useFetch from "./hooks/useFetch";
 import CourseCard from "./components/CourseCard";
 
-const useFetch = (currentUrl) => {
-  const [data, setData] = useState(null);
-  const [url, setUrl] = useState(currentUrl);
-
-  const fetchPost = () => {
-    fetch(url)
-      .then((x) => x.json())
-      .then((x) => setData(x));
-  };
-
-  useEffect(() => {
-    fetchPost();
-  }, [url]);
-
-  return [data, setUrl];
-};
-
 function App() {
-  const [posts, setPosts] = useFetch(
-    "https://raw.githubusercontent.com/Drag13/react-learning-course-short/master/course.json"
-  );
+  const [course, setCourse] = useFetch("./course.json");
 
   return (
     <div className="App">
-      <h1>{posts && posts.title}</h1>
-      {posts ? (
-        posts.lessons.map((post) => <CourseCard post={post} />)
-      ) : (
-        <p>LOADING ERROR</p>
-      )}
+      <header>
+        <h1>{course && course.title}</h1>
+      </header>
+      <main>
+        {course ? (
+          course.lessons.map((item) => <CourseCard lesson={item} />)
+        ) : (
+          <p>LOADING</p>
+        )}
+      </main>
     </div>
   );
 }
