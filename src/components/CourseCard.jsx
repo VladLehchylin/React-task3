@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import LessonForm from "./LessonForm";
 import ItemList from "./ItemList";
-import LessonLinks from "./lessonLinks";
+import LessonLinks from "./LessonLinks";
 
 const listsNames = {
   keyPoints: "Key Points",
