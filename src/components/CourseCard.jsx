@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import LessonForm from "./LessonForm";
 import ItemList from "./ItemList";
+import LessonLinks from "./LessonLinks";
 
 const listsNames = {
   keyPoints: "Key Points",
@@ -18,7 +19,7 @@ const CourseCard = ({ lesson }) => {
   );
 
   return (
-    <div className={`course-card ${complited}`}>
+    <div className={`course-card ${complited || ''}`}>
       <h2>{lesson.title}</h2>
       <p>Lection type: {lesson.type}</p>
 

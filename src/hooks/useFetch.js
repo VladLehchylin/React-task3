@@ -5,14 +5,14 @@ const useFetch = (currentUrl) => {
     const [data, setData] = useState(null);
     const [url, setUrl] = useState(currentUrl);
   
-    const fetchPost = () => {
+    const fetchItem = () => {
       fetch(url)
-        .then((x) => x.json())
-        .then((x) => setData(x));
+        .then((response) => response.json())
+        .then((response) => setData(response));
     };
   
     useEffect(() => {
-      fetchPost();
+      fetchItem();
     }, [url]);
   
     return [data, setUrl];

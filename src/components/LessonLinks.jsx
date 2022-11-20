@@ -5,10 +5,10 @@ const LessonLinks = ({ listName, list }) => {
         <section>
           <h3>{listName}</h3>
           <ul>
-            {list.map((item) => {
+            {list.map((item, index) => {
               const [text, link] = item;
               return (
-                <li>
+                <li key={index}>
                   <a href={link}>{text}</a>
                 </li>
               );

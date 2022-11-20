@@ -12,7 +12,7 @@ function App() {
       </header>
       <main>
         {course ? (
-          course.lessons.map((item) => <CourseCard lesson={item} />)
+          course.lessons.map((item, index) => <CourseCard key={index} lesson={item} />)
         ) : (
           <p>LOADING</p>
         )}
