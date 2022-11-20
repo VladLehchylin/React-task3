@@ -3,7 +3,7 @@ import useFetch from "./hooks/useFetch";
 import CourseCard from "./components/CourseCard";
 
 function App() {
-  const [course, setCourse] = useFetch("./course.json");
+  const [course, setCourse] = useFetch("https://raw.githubusercontent.com/Drag13/react-learning-course-short/master/course.json");
 
   return (
     <div className="App">
