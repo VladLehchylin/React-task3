@@ -2,7 +2,7 @@ const ItemList = ({ listName, list }) => {
   return (
     <>
       {list ? (
-        <section>
+        <section className="borderBottom">
           <h3>{listName}</h3>
           <ul>
             {list.map((item, index) => (

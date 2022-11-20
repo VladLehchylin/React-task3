@@ -4,6 +4,7 @@ import { useState } from "react";
 import LessonForm from "./LessonForm";
 import ItemList from "./ItemList";
 import LessonLinks from "./LessonLinks";
+import LessonYouTube from "./LessonYouTube";
 
 const listsNames = {
   keyPoints: "Key Points",
@@ -19,7 +20,7 @@ const CourseCard = ({ lesson }) => {
   );
 
   return (
-    <div className={`course-card ${complited || ''}`}>
+    <div className={`course-card ${complited || ""}`}>
       <h2>{lesson.title}</h2>
       <p>Lection type: {lesson.type}</p>
 
@@ -27,12 +28,10 @@ const CourseCard = ({ lesson }) => {
       <ItemList listName={listsNames.prerequisite} list={lesson.prerequisite} />
       <ItemList listName={listsNames.takeaways} list={lesson.takeaways} />
       <ItemList listName={listsNames.hometask} list={lesson.hometask} />
+
       <LessonLinks listName={listsNames.links} list={lesson.links} />
 
-      <section>
-        <h3>YouTube</h3>
-        <a href={lesson.youtube}>Link</a>
-      </section>
+      <LessonYouTube youtube={lesson.youtube} hidden={lesson.hidden}/>
 
       <LessonForm
         complited={complited}

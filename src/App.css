@@ -22,8 +22,6 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  border-bottom: 2px solid black;
-  padding-bottom: 10px;
 }
 
 .flex {
@@ -38,4 +36,19 @@ button {
 
 textarea {
   margin-bottom: 10px;
+}
+
+a {
+  color: inherit;
+
+}
+
+a:hover {
+  color: blue;
+}
+
+.borderBottom {
+  padding-bottom: 10px;
+  border-bottom: 2px solid black;
+
 }
